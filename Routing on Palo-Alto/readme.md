@@ -6,23 +6,23 @@ Lab for
 - Routing on Palo-Alto
 
 Task
-1\. [Initial Config](#1-initial-config)
-	1.1. Create Management profile
-	1.2. Create zone "Inside"
-	1.3. Create vlan "vlan.30 and vlan.60"
-	1.4. Assign IP address to ethernet 1/1, 1/2, 1/3
-	1.5. Assign IP address to vlan.30 and vlan.60
-2\. [Virtual Router Config](#2-virtual-router-config)
-	2.1. Static Route
-	2.2. OSPF Route and Authentication
-	2.3. RIP Route and Authentication
-3\. [Redistribution](#3-redistribution)
-	3.1. Create Redistribution profile for RIP
-	3.2. Create Redistribution profile for OSPF
-	3.3. Create Redistribution profile for Static and Connect
-	3.4. Apply Redistribution profile to RIP
-	3.5. Apply Redistribution profile to OSPF
-4\. [Verification](#4-verification)
+1. [Initial Config](#1-initial-config)
+	- 1.1. Create Management profile
+	- 1.2. Create zone "Inside"
+	- 1.3. Create vlan "vlan.30 and vlan.60"
+	- 1.4. Assign IP address to ethernet 1/1, 1/2, 1/3
+	- 1.5. Assign IP address to vlan.30 and vlan.60
+2. [Virtual Router Config](#2-virtual-router-config)
+	- 2.1. Static Route
+	- 2.2. OSPF Route and Authentication
+	- 2.3. RIP Route and Authentication
+3. [Redistribution](#3-redistribution)
+	- 3.1. Create Redistribution profile for RIP
+	- 3.2. Create Redistribution profile for OSPF
+	- 3.3. Create Redistribution profile for Static and Connect
+	- 3.4. Apply Redistribution profile to RIP
+	- 3.5. Apply Redistribution profile to OSPF
+4. [Verification](#4-verification)
 
 ---
 #### 1. Initial Config
