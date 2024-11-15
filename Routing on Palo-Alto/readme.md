@@ -84,87 +84,87 @@ network > virtual routers > default > static routes > add >
 ```
 
 2.2 OSPF Route and Authentication
-	OSPF Config 
-	```py
-	network > virtual routers > default > OSPF > 
-		enable = yes
-		reject default route = yes
-		router id = 0.0.0.2
-		area > add
-			area ID = 0.0.0.0
-			type
-				type = normal
-			interface > add >
-				interface = ethernet 1/1
-				enable = yes
-				
-				interface = vlan.30
-				enable = yes
-	```
-	OSPF Authentication (Palo Alto - Cisco)
-	```py
-	Cisco#
-		interface Ethernet0/0
-		 ip address 10.0.0.1 255.255.255.0
-		 ip ospf authentication key-chain cisco
-		
-		key chain cisco
-		 key 1
-		  key-string OneTwo34
-		  cryptographic-algorithm md5
-	```
-	```py
-	Palo Alto#
-		Network > virtual routers > default > OSPF > Auth Profiles > Add >
-			profile name = paloalto
-			password type = md5
-			key-ID = 1
-			key = OneTwo34
-			preferred = yes
-		Network > virtual routers > default > OSPF > Areas > 0.0.0.0 > interface > ethernet1/1 > 
-			Auth Profile = paloalto
-	```
+OSPF Config 
+```py
+network > virtual routers > default > OSPF > 
+	enable = yes
+	reject default route = yes
+	router id = 0.0.0.2
+	area > add
+		area ID = 0.0.0.0
+		type
+			type = normal
+		interface > add >
+			interface = ethernet 1/1
+			enable = yes
+			
+			interface = vlan.30
+			enable = yes
+```
+OSPF Authentication (Palo Alto - Cisco)
+```py
+Cisco#
+	interface Ethernet0/0
+	 ip address 10.0.0.1 255.255.255.0
+	 ip ospf authentication key-chain cisco
+	
+	key chain cisco
+	 key 1
+	  key-string OneTwo34
+	  cryptographic-algorithm md5
+```
+```py
+Palo Alto#
+	Network > virtual routers > default > OSPF > Auth Profiles > Add >
+		profile name = paloalto
+		password type = md5
+		key-ID = 1
+		key = OneTwo34
+		preferred = yes
+	Network > virtual routers > default > OSPF > Areas > 0.0.0.0 > interface > ethernet1/1 > 
+		Auth Profile = paloalto
+```
 	
 	
 2.3 RIP Route and Authentication
-	RIP Config 
-	```py
-	network > virtual routers > default > RIP >
+RIP Config 
+```py
+network > virtual routers > default > RIP >
+	enable = yes
+	reject default route = yes
+	interfaces > add > 
+		interface = ethernet1/2
 		enable = yes
-		reject default route = yes
-		interfaces > add > 
-			interface = ethernet1/2
-			enable = yes
-			mode = normal
-			
-			interface = vlan.60
-			enable = yes
-			mode = normal
-	```
-	RIP Authentication
-	```py
-	Cisco#
-		interface Ethernet0/0
-		 ip address 40.0.0.3 255.255.255.0
-		 ip rip authentication mode md5
-		 ip rip authentication key-chain cisco
+		mode = normal
 		
-		key chain cisco
-		 key 1
-		  key-string OneTwo34
-		  cryptographic-algorithm md5
-	```
-	```py
-	Palo Alto#
-		Network > virtual routers > default > RIP > Auth Profiles > Add >
-			profile name = paloalto
-			password type = md5
-			key-ID = 1
-			key = OneTwo34
-			preferred = yes
-		Network > virtual routers > default > RIP > interface > ethernet1/2 > 
-			Auth Profile = paloalto
-	```
+		interface = vlan.60
+		enable = yes
+		mode = normal
+```
+RIP Authentication
+```py
+Cisco#
+	interface Ethernet0/0
+	 ip address 40.0.0.3 255.255.255.0
+	 ip rip authentication mode md5
+	 ip rip authentication key-chain cisco
+	
+	key chain cisco
+	 key 1
+	  key-string OneTwo34
+	  cryptographic-algorithm md5
+```
+```py
+Palo Alto#
+	Network > virtual routers > default > RIP > Auth Profiles > Add >
+		profile name = paloalto
+		password type = md5
+		key-ID = 1
+		key = OneTwo34
+		preferred = yes
+	Network > virtual routers > default > RIP > interface > ethernet1/2 > 
+		Auth Profile = paloalto
+```
 
 #### 3. Redistribution
 3.1. Create Redistribution profile for RIP
@@ -213,11 +213,3 @@ network > virtual routers > default > ospf > export rules >
 `> show routing protocol rip summary` <br>
 `> ping source 192.168.78.100 host 1.1.1.1` <br>
 `> show routing protocol rip database`
-
-
-
-
-
-
-
-
