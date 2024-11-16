@@ -21,7 +21,6 @@ Task
     `network > zones > add >` <br>
 
     | name | Outside | Inside | DMZ    |
-    | ---- | ------- | ------ | ------ |
     | type | layer3  | layer3 | layer3 |
 
 - 1.2. Create Management Profile for ping service
@@ -34,7 +33,6 @@ Task
     `network > interfaces > add >` <br>
 
     | name                  | ethernet1/1 | ethernet1/2 | ethernet1/3 |
-    | --------------------- | ----------- | ----------- | ----------- |
     | type                  | layer3      | layer3      | layer3      |
     | config/virtual router | default     | default     | default     |
     | config/security zone  | Inside      | Outside     | DMZ         |
