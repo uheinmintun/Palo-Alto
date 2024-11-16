@@ -66,7 +66,7 @@ Task
 
 
 - 1.4. Create Default Route
-    ```py
+    ```sh
     network > virtual routers > default > static routes > add >
             name = `Default-Route`
             destination = `0.0.0.0/0`
