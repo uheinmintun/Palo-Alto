@@ -17,36 +17,61 @@ Task
 7. [U-Turn NAT](#7-u-turn-nat)
 ---
 #### 1. Topology Setup
-- 1.1. Create Zones for Inside, Outside, DMZ <br>
-    `network > zones > add >` <br>
+- 1.1. Create Zones for Inside, Outside, DMZ
+    ```py
+    network > zones > add >
+        name = `Outside`
+        type = layer3
 
-    | name | Outside | Inside | DMZ    |
-    | type | layer3  | layer3 | layer3 |
+    network > zones > add >
+        name = `Inside`
+        type = layer3
 
+    network > zones > add >
+        name = `DMZ`
+        type = layer3
+    ```
 - 1.2. Create Management Profile for ping service
     ```py
     network > network profiles > interface mgmt >
-        name = ping
-        network services = ping
+        name = `ping`
+        network services = `ping`
     ```
-- 1.3. Create and Assign IP addresses <br>
-    `network > interfaces > add >` <br>
-
-    | name                  | ethernet1/1 | ethernet1/2 | ethernet1/3 |
-    | type                  | layer3      | layer3      | layer3      |
-    | config/virtual router | default     | default     | default     |
-    | config/security zone  | Inside      | Outside     | DMZ         |
-    | IPv4                  | 10.100      | 1.100       | 20.100      |
-    | adv/oth info/mgmt pro | ping        | ping        | ping        |
+- 1.3. Create and Assign IP addresses
+    ```py
+    network > interfaces > add >
+        name = `ethernet1/1`
+        type = `layer3`
+        config > virtual router = `default`
+        config > security zone = `Inside`
+        IPv4 = `192.168.10.100`
+        adv > other info > mgmt profile = `ping`
+        
+    network > interfaces > add >
+        name = `ethernet1/2`
+        type = `layer3`
+        config > virtual router = `default`
+        config > security zone = `Outside`
+        IPv4 = `192.168.1.100`
+        adv > other info > mgmt profile = `ping`
+    
+    network > interfaces > add >
+        name = `ethernet1/3`
+        type = `layer3`
+        config > virtual router = `default`
+        config > security zone = `DMZ`
+        IPv4 = `192.168.20.100`
+        adv > other info > mgmt profile = `ping`
+    ```
 
 
 - 1.4. Create Default Route
     ```py
     network > virtual routers > default > static routes > add >
-            name = Default-Route
-            destination = 0.0.0.0/0
-            interface = ethernet1/2
-            next hop = 192.168.1.20
+            name = `Default-Route`
+            destination = `0.0.0.0/0`
+            interface = `ethernet1/2`
+            next hop = `192.168.1.20`
     ```
 ---
 #### 2. SNAT with Dynamic IP and Port (PAT)
