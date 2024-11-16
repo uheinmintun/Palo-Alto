@@ -34,7 +34,7 @@ Task
 #### 1. Initial Config
 - 1.1. Create Management profile
 	```py
-	network > network profiles > interface mgmt >
+	network > network profiles > interface mgmt > add >
 		name = ping
 		network services = ping
 	```
@@ -65,7 +65,7 @@ Task
 	```
 - 1.5. Assign IP address to vlan.30 and vlan.60
 	```py
-	network > vlans >
+	network > interface > vlan > add >
 		internet name = vlan.30
 		config
 			vlan = vlan30
