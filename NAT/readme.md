@@ -3,15 +3,18 @@
 ---
 Lab for
 - NAT on Palo-Alto
+- SNAT
+- DNAT
+- U-Turn NAT
 
 Task
-1. Topology Setup
-2. SNAT with Dynamic IP and Port (PAT)
-3. SNAT with Dynamic IP
-4. SNAT with Static IP
-5. DNAT (Static and Port Forwarding)
-6. DNAT (Static and Port Translation)
-7. U-Turn-NAT
+1. [Topology Setup](#1-topology-setup)
+2. [SNAT with Dynamic IP and Port (PAT)](#2-snat-with-dynamic-ip-and-port-pat)
+3. [SNAT with Dynamic IP](#3-snat-with-dynamic-ip)
+4. [SNAT with Static IP](#4-snat-with-static-ip)
+5. [DNAT (Static and Port Forwarding)](#5-dnat-static-and-port-forwarding)
+6. [DNAT (Static and Port Translation)](#6-dnat-static-and-port-translation)
+7. [U-Turn NAT](#7-u-turn-nat)
 ---
 #### 1. Topology Setup
 - 1.1. Create Zones for Inside, Outside, DMZ <br>
@@ -315,7 +318,7 @@ Task
     vsys1                                          192.168.1.100[80]/DMZ  (192.168.20.10[8080])
     ```
 ---
-#### 7. U-Turn-NAT
+#### 7. U-Turn NAT
 ![](./images/u-turn-nat.png)
 - 7.1. Create NAT policy
     ```py
