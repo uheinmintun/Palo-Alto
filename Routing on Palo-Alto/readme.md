@@ -209,9 +209,7 @@ RIP Config
 
 		
 #### 4. Verification
-`Network > Virtual Routers > More Runtime Stats`
-![]()
-
+`Network > Virtual Routers > More Runtime Stats` <br>
 `> show routing route` <br>
 `> show routing protocol ospf summary` <br>
 `> ping source 192.168.78.100 host 1.1.1.1` <br>
