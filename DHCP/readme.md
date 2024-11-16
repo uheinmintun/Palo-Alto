@@ -124,7 +124,7 @@ admin@PA-VM> show dhcp server lease interface ethernet1/1
 interface: "ethernet1/1" id: 16
 Allocated IPs: 1, Total number of IPs in pool: 11. 9.1% used
  ip              mac                hostname                         state      duration    lease_time            
-`192.168.0.10    00:50:79:66:68:17  VPCS1                            committed  86400       Sun Nov 17 02:06:44 2024`
+`192.168.0.10    00:50:79:66:68:17  VPCS1                            committed  86400       Sun Apr 17 02:06:44 2023`
 
 ```
 
