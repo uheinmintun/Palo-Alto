@@ -17,7 +17,7 @@ Task
     - 1.3. Configure interfaces (zone, default VR, IP, if-type)
 3. [DHCP Server Config](#3-dhcp-config)
 4. [DHCP Relay Config](#4-dhcp-relay-config)
-
+5. [Verification](#5-verification)
 ---
 #### 1. Initial Config of DHCP Server
 - 1.1. Create Management profile
