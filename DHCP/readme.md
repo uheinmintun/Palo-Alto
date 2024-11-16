@@ -3,7 +3,7 @@
 ---
 Lab for
 - DHCP Server
-- DHCP Client
+- DHCP Relay
 
 Task
 1. [Initial Config of DHCP Server](#1-initial-config-of-dhcp-server)
