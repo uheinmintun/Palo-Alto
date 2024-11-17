@@ -144,91 +144,91 @@ Task
 - 3.1. IKE Crypto Profile
     ```sh
     network > network profiles > 'IKE Crypto' > add >
-        name = 'IKE-CRYPTO'
-        dh-group = 'group2'
-        authentication = 'sha1'
-        encryption = 'aes-128-cbc'
+        name: 'IKE-CRYPTO'
+        dh-group: 'group2'
+        authentication: 'sha1'
+        encryption: 'aes-128-cbc'
     ```
     ![](./images/ike-crypto.png)
 - 3.2. IPsec Crypto Profile
     ```sh
     network > network profiles > 'IPsec Crypto' > add >
-        name = 'IPSEC-CRYPTO'
-        IPsec protocol = 'ESP'
-        encryption = 'aes-128-cbc'
-        authentication = 'sha1'
-        dh-group = 'group2'
+        name: 'IPSEC-CRYPTO'
+        IPsec protocol: 'ESP'
+        encryption: 'aes-128-cbc'
+        authentication: 'sha1'
+        dh-group: 'group2'
     ```
     ![](./images/ipsec-crypto.png)
 - 3.3. IKE Gateways
     ```sh
     network > network profiles > 'IKE Gateways' > add >
         general >
-            name = 'IKE-GW'
-            version = 'IKEv1 only mode'
-            address type = 'IPv4'
-            interface = 'ethernet1/2'
-            local IP address = '10.0.0.100/24'
-            peer address = '20.0.0.200'
-            authentication = 'pre-shared key'
+            name: 'IKE-GW'
+            version: 'IKEv1 only mode'
+            address type: 'IPv4'
+            interface: 'ethernet1/2'
+            local IP address: '10.0.0.100/24'
+            peer address: '20.0.0.200'
+            authentication: 'pre-shared key'
         advanced options >
-            exchange mode = 'main'
-            IKE cryto profile = 'IKE-CRYPTO'
+            exchange mode: 'main'
+            IKE cryto profile: 'IKE-CRYPTO'
     ```
     ![](./images/ike-gw.png)
 - 3.4. IPsec Tunnel
     ```sh
     network > 'IPsec Tunnels' > add >
-        name = 'IPSEC-TUNNEL'
-        tunnel interface = 'tunnel.1'
-        type = 'auto key'
-        address type = 'IPv4'
-        IKE gateway = 'IKE-GW'
-        IPsec crypto profile = 'IPSEC-CRYPTO'
+        name: 'IPSEC-TUNNEL'
+        tunnel interface: 'tunnel.1'
+        type: 'auto key'
+        address type: 'IPv4'
+        IKE gateway: 'IKE-GW'
+        IPsec crypto profile: 'IPSEC-CRYPTO'
     ```
     ![](./images/ipsec-tunnel.png)
 #### 4. IPsec Config (Site-B)
 - 4.1. IKE Crypto Profile
     ```sh
     network > network profiles > 'IKE Crypto' > add >
-        name = 'IKE-CRYPTO'
-        dh-group = 'group2'
-        authentication = 'sha1'
-        encryption = 'aes-128-cbc'
+        name: 'IKE-CRYPTO'
+        dh-group: 'group2'
+        authentication: 'sha1'
+        encryption: 'aes-128-cbc'
     ```
 - 4.2. IPsec Crypto Profile
     ```sh
     network > network profiles > 'IPsec Crypto' > add >
-        name = 'IPSEC-CRYPTO'
-        IPsec protocol = 'ESP'
-        encryption = 'aes-128-cbc'
-        authentication = 'sha1'
-        dh-group = 'group2'
+        name: 'IPSEC-CRYPTO'
+        IPsec protocol: 'ESP'
+        encryption: 'aes-128-cbc'
+        authentication: 'sha1'
+        dh-group: 'group2'
     ```
 - 4.3. IKE Gateways
     ```sh
     network > network profiles > 'IKE Gateways' > add >
         general >
-            name = 'IKE-GW'
-            version = 'IKEv1 only mode'
-            address type = 'IPv4'
-            interface = 'ethernet1/2'
-            local IP address = '20.0.0.200/24'
-            peer address = '10.0.0.100'
-            authentication = 'pre-shared key'
+            name: 'IKE-GW'
+            version: 'IKEv1 only mode'
+            address type: 'IPv4'
+            interface: 'ethernet1/2'
+            local IP address: '20.0.0.200/24'
+            peer address: '10.0.0.100'
+            authentication: 'pre-shared key'
         advanced options >
-            exchange mode = 'main'
-            IKE cryto profile = 'IKE-CRYPTO'
+            exchange mode: 'main'
+            IKE cryto profile: 'IKE-CRYPTO'
     ```
 - 4.4. IPsec Tunnel
     ```sh
     network > 'IPsec Tunnels' > add >
-        name = 'IPSEC-TUNNEL'
-        tunnel interface = 'tunnel.1'
-        type = 'auto key'
-        address type = 'IPv4'
-        IKE gateway = 'IKE-GW'
-        IPsec crypto profile = 'IPSEC-CRYPTO'
+        name: 'IPSEC-TUNNEL'
+        tunnel interface: 'tunnel.1'
+        type: 'auto key'
+        address type: 'IPv4'
+        IKE gateway: 'IKE-GW'
+        IPsec crypto profile: 'IPSEC-CRYPTO'
     ```
 #### Verification
 > network > IPsec tunnels >
